@@ -31,3 +31,16 @@ stages:
     metrics:
       - metrics/rdd_eval_t${threshold}_bw${bandwidth}.json:
           cache: false
+
+  evaluate_roi:
+    cmd: python src/evaluate_roi.py ${threshold} ${bandwidth} ${extra_recovery_cost}
+    deps:
+      - src/evaluate_roi.py
+      - metrics/rdd_eval_t${threshold}_bw${bandwidth}.json
+    params:
+      - threshold
+      - bandwidth
+      - extra_recovery_cost
+    metrics:
+      - metrics/roi_t${threshold}_bw${bandwidth}.json:
+          cache: false

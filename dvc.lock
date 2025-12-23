@@ -40,7 +40,7 @@ stages:
       md5: ca1c1419f2a2e3a93ca1ded674d7ba17
       size: 168804
   evaluate_rdd:
-    cmd: python src/evaluate_rdd.py 1000 100
+    cmd: python src/evaluate_rdd.py 1000 150
     deps:
     - path: data/processed/bank_data.csv
       hash: md5
@@ -52,10 +52,31 @@ stages:
       size: 3859
     params:
       params.yaml:
-        bandwidth: 100
+        bandwidth: 150
         threshold: 1000
     outs:
-    - path: metrics/rdd_eval_t1000_bw100.json
+    - path: metrics/rdd_eval_t1000_bw150.json
       hash: md5
-      md5: 734a18a7dee6de6f6ae641cc9935f35a
+      md5: a3efa7614a77bdbbeacf459b02db0470
       size: 562
+  evaluate_roi:
+    cmd: python src/evaluate_roi.py 1000 150 150
+    deps:
+    - path: metrics/rdd_eval_t1000_bw150.json
+      hash: md5
+      md5: a3efa7614a77bdbbeacf459b02db0470
+      size: 562
+    - path: src/evaluate_roi.py
+      hash: md5
+      md5: 2fb527b26543e92aebad0642277d8c7e
+      size: 1329
+    params:
+      params.yaml:
+        bandwidth: 150
+        extra_recovery_cost: 150
+        threshold: 1000
+    outs:
+    - path: metrics/roi_t1000_bw150.json
+      hash: md5
+      md5: 9ebd513facfd88a320454cdc4baf7098
+      size: 196

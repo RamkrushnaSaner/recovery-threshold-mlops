@@ -1,0 +1,8 @@
+{
+    "threshold": 1000,
+    "bandwidth": 150,
+    "extra_recovery_cost": 150.0,
+    "recovery_uplift": 373.7338183842853,
+    "net_gain": 223.7338183842853,
+    "roi": 1.4915587892285687
+}

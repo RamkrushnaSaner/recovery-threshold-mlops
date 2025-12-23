@@ -1,0 +1,8 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - data/raw/bank_data.csv
+    - src/preprocess.py
+    outs:
+    - data/processed/bank_data.csv

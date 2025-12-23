@@ -59,24 +59,3 @@ stages:
       hash: md5
       md5: a3efa7614a77bdbbeacf459b02db0470
       size: 562
-  evaluate_roi:
-    cmd: python src/evaluate_roi.py 1000 150 150
-    deps:
-    - path: metrics/rdd_eval_t1000_bw150.json
-      hash: md5
-      md5: a3efa7614a77bdbbeacf459b02db0470
-      size: 562
-    - path: src/evaluate_roi.py
-      hash: md5
-      md5: 2fb527b26543e92aebad0642277d8c7e
-      size: 1329
-    params:
-      params.yaml:
-        bandwidth: 150
-        extra_recovery_cost: 150
-        threshold: 1000
-    outs:
-    - path: metrics/roi_t1000_bw150.json
-      hash: md5
-      md5: 9ebd513facfd88a320454cdc4baf7098
-      size: 196

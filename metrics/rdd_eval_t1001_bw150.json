@@ -1,0 +1,16 @@
+{
+    "threshold": 1001,
+    "bandwidth": 150,
+    "n_samples": 256,
+    "kw_age_pvalue": 0.14554641853969438,
+    "chi2_sex_pvalue": 0.5897736168259036,
+    "mean_recovery_control": 602.7352459016394,
+    "mean_recovery_treatment": 971.0931727708955,
+    "recovery_uplift": 368.3579268692562,
+    "kw_recovery_pvalue": 1.8919873471485105e-25,
+    "coef_indicator": 250.24061018305395,
+    "p_value_indicator": 6.19260456114176e-05,
+    "ci_lower_95": 129.26817931945226,
+    "ci_upper_95": 371.21304104665563,
+    "r_squared": 0.3558061950808099
+}

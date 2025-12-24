@@ -17,7 +17,7 @@ stages:
       md5: 1d913ee7e3acf2fcb12704a5813f80b8
       size: 89663
   train:
-    cmd: python src/train.py 1000
+    cmd: python src/train.py 1001
     deps:
     - path: data/processed/bank_data.csv
       hash: md5
@@ -25,22 +25,22 @@ stages:
       size: 89663
     - path: src/train.py
       hash: md5
-      md5: 085c0f4532584ce214bc823fa4ae67b4
-      size: 2497
+      md5: 6db36e4f7baf0301001ff5c3d88bc415
+      size: 3250
     params:
       params.yaml:
-        threshold: 1000
+        threshold: 1001
     outs:
     - path: metrics/metrics.json
       hash: md5
-      md5: 3f3e4cffb9e190ac4a9dcb93789ceed1
-      size: 487
+      md5: ed85d635c44e34c45af837b593c534c2
+      size: 486
     - path: models/ols_model.pkl
       hash: md5
-      md5: ca1c1419f2a2e3a93ca1ded674d7ba17
+      md5: de5155f75e3be9e11067dce0c3338eaf
       size: 168804
   evaluate_rdd:
-    cmd: python src/evaluate_rdd.py 1000 150
+    cmd: python src/evaluate_rdd.py 1001 150
     deps:
     - path: data/processed/bank_data.csv
       hash: md5
@@ -53,9 +53,9 @@ stages:
     params:
       params.yaml:
         bandwidth: 150
-        threshold: 1000
+        threshold: 1001
     outs:
-    - path: metrics/rdd_eval_t1000_bw150.json
+    - path: metrics/rdd_eval_t1001_bw150.json
       hash: md5
-      md5: a3efa7614a77bdbbeacf459b02db0470
-      size: 562
+      md5: b1a5b830b534bbdf9dbdeee4c62545e4
+      size: 563
